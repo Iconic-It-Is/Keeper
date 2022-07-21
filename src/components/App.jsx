@@ -13,7 +13,6 @@ function App() {
 		setNotesArr((prevItems) => {
 			return [...prevItems, note];
 		});
-		console.log(notesArr);
 	}
 
 	function deleteItem(id) {
@@ -23,8 +22,14 @@ function App() {
 			});
 		});
 	}
+	function editDirectlyItem(id, title, content) {
+		const tobeUpdated = notesArr.find((singleNote, index) => index === id);
+		tobeUpdated.title = title;
+		tobeUpdated.content = content;
+		setNotesArr([...notesArr]);
+	}
 	return (
-		<div>
+		<>
 			<Particle />
 			<Header />
 			<CreateArea onAdd={addItem} />
@@ -37,12 +42,13 @@ function App() {
 							title={item.title}
 							content={item.content}
 							onDelete={deleteItem}
+							onEdit={editDirectlyItem}
 						/>
 					)
 				);
 			})}
 			<Footer />
-		</div>
+		</>
 	);
 }
 

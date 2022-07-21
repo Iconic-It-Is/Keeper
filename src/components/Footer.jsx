@@ -1,9 +1,13 @@
+import { Copyright } from "@material-ui/icons";
 import React from "react";
 
 function Footer() {
 	return (
 		<footer>
-			<p>Copyright ⓒAman Kuliyal @{new Date().getFullYear()}</p>
+			<p>
+				<Copyright />
+				{new Date().getFullYear()} Copyright: Aman Kuliyal{" "}
+			</p>
 		</footer>
 	);
 }

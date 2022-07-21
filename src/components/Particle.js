@@ -25,118 +25,73 @@ function Particle() {
 					enable: true,
 					zIndex: -1,
 				},
+				fpsLimit: 120,
 				particles: {
 					number: {
-						value: 10,
+						value: 80,
 						density: {
-							enable: false,
+							enable: true,
 							value_area: 800,
 						},
 					},
 					color: {
-						value: "#85dcbe",
-					},
-					shape: {
-						type: "star",
-						options: {
-							sides: 5,
+						value: " #A020F0",
+						animation: {
+							enable: true,
+							speed: 20,
+							sync: true,
 						},
 					},
 					opacity: {
-						value: 0.8,
-						random: false,
-						anim: {
-							enable: false,
-							speed: 1,
-							opacity_min: 0.1,
-							sync: false,
-						},
+						value: 0.5,
 					},
 					size: {
-						value: 4,
-						random: false,
-						anim: {
-							enable: false,
-							speed: 40,
-							size_min: 0.1,
-							sync: false,
+						value: {
+							min: 0.1,
+							max: 3,
 						},
 					},
-					rotate: {
-						value: 0,
-						random: true,
-						direction: "clockwise",
-						animation: {
-							enable: true,
-							speed: 5,
-							sync: false,
-						},
-					},
-					line_linked: {
+					links: {
 						enable: true,
-						distance: 600,
-						color: "#85dcbe",
+						distance: 100,
+						color: "#ED1873",
 						opacity: 0.4,
-						width: 2,
+						width: 1,
 					},
 					move: {
 						enable: true,
-						speed: 2,
+						speed: 6,
 						direction: "none",
-						random: false,
-						straight: false,
-						out_mode: "out",
-						attract: {
-							enable: false,
-							rotateX: 600,
-							rotateY: 1200,
+						outModes: {
+							default: "out",
 						},
 					},
 				},
 				interactivity: {
 					events: {
-						onhover: {
+						onHover: {
 							enable: true,
-							mode: ["grab"],
+							mode: "repulse",
 						},
-						onclick: {
-							enable: false,
-							mode: "bubble",
+						onClick: {
+							enable: true,
+							mode: "push",
 						},
 						resize: true,
 					},
 					modes: {
-						grab: {
-							distance: 400,
-							line_linked: {
-								opacity: 1,
-							},
-						},
-						bubble: {
-							distance: 400,
-							size: 40,
-							duration: 2,
-							opacity: 8,
-							speed: 3,
-						},
 						repulse: {
 							distance: 200,
 						},
 						push: {
-							particles_nb: 4,
-						},
-						remove: {
-							particles_nb: 2,
+							quantity: 4,
 						},
 					},
 				},
-				retina_detect: true,
+				detectRetina: true,
 				background: {
-					color: "#41b3a3",
-					image: "",
-					position: "50% 50%",
-					repeat: "no-repeat",
-					size: "cover",
+					// color: "#000000",
+					image: `linear-gradient(to right,#ff7082,#f48eca,#d2b3f7,#b8d2ff,#c0e9ff)`,
 				},
 			}}
 		/>

@@ -4,7 +4,8 @@
 	box-sizing: border-box;
 }
 html {
-	font-family: "Montserrat", sans-serif;
+	font-family: "Open Sans", sans-serif;
+	/* font-family: "McLaren", cursive; */
 }
 body {
 	background: #eee;
@@ -12,10 +13,18 @@ body {
 }
 
 header {
-	background-color: #e27d60;
+	/* background-color: #fbc8d5; */
+	background-image: linear-gradient(
+		to right,
+		#ff7082,
+		#f48eca,
+		#d2b3f7,
+		#b8d2ff,
+		#c0e9ff
+	);
 	margin: auto -16px;
 	padding: 16px 32px;
-	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+	/* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); */
 }
 
 header h1 {
@@ -25,15 +34,17 @@ header h1 {
 }
 
 footer {
-	position: absolute;
+	position: fixed;
 	text-align: center;
 	bottom: 0;
 	width: 100%;
-	height: 2.5rem;
+	height: 3rem;
 }
 
 footer p {
 	color: #fff;
+	font-weight: bolder;
+	font-family: "Rock Salt", cursive;
 }
 .note {
 	background: #fff;
@@ -59,13 +70,13 @@ footer p {
 	position: relative;
 	float: right;
 	margin-right: 10px;
-	color: #e8a87c;
+	color: #fff;
 	border: none;
 	width: 36px;
 	height: 36px;
 	cursor: pointer;
 	border-radius: 50%;
-	background: transparent;
+	background: #fbc8d5;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 	outline: none;
 }
@@ -93,7 +104,43 @@ form.create-note button {
 	position: absolute;
 	right: 18px;
 	bottom: -18px;
-	background: #e8a87c;
+	background: #71c5ee;
+	color: #fff;
+	border: none;
+	border-radius: 50%;
+	width: 36px;
+	height: 36px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	outline: none;
+}
+/* Edit Form */
+.show {
+	display: block;
+}
+.hide {
+	display: none;
+}
+form.edit-note {
+	position: relative;
+	margin: 30px auto 25px auto;
+	background: #fff;
+	border-radius: 7px;
+	box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+form.edit-note input,
+form.edit-note textarea {
+	width: 100%;
+	border: none;
+	padding: 7px;
+	outline: none;
+	font-size: 1em;
+	font-family: inherit;
+	resize: none;
+}
+form.edit-note button {
+	bottom: -25px;
+	background: #fbc8d5;
 	color: #fff;
 	border: none;
 	border-radius: 50%;
